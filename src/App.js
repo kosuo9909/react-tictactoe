@@ -11,7 +11,15 @@ const App = () => {
     <div className='app'>
       <div className='gameboard'>
         {cells.map((cell, index) => (
-          <Cell key={index} id={index} cell={cell} setCells={setCells} />
+          <Cell
+            key={index}
+            id={index}
+            cell={cell}
+            setCells={setCells}
+            setGo={setGo}
+            go={go}
+            cells={cells}
+          />
         ))}
       </div>
       <p>{message}</p>
