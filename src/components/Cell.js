@@ -1,18 +1,21 @@
 const Cell = ({ id, cell, setCells, go, setGo, cells, winningMessage }) => {
   const handleClick = (e) => {
-    const taken =
-      e.target.firstChild.classList.contains('circle') ||
-      e.target.firstChild.classList.contains('cross');
+    let taken = undefined;
+    try {
+      const taken =
+        e.target.firstChild.classList.contains('circle') ||
+        e.target.firstChild.classList.contains('cross');
+    } catch {}
 
     if (!taken) {
-      if (go === 'circle') {
+      if (go === 'circle' && e.target.firstChild !== null) {
         e.target.firstChild.classList.add('circle');
         handleCellChange('circle');
 
         setGo('cross');
       }
 
-      if (go === 'cross') {
+      if (go === 'cross' && e.target.firstChild !== null) {
         e.target.firstChild.classList.add('cross');
         handleCellChange('cross');
         setGo('circle');
