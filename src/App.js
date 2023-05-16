@@ -6,7 +6,7 @@ const App = () => {
   const [go, setGo] = useState('circle');
   const [winningMessage, setWinningMessage] = useState(null);
 
-  const message = 'it is now ' + go + "'s go";
+  const message = 'It is now ' + go + "'s turn.";
 
   const checkScore = () => {
     const winningCombos = [
